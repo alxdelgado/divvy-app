@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 
+
 export const ArrowWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr, 44px; 
+    margin-top: 0.5rem;
 `;
 
-export const ArrowAnimation = styled(Link)`
-    --active: #fff;
-    --border: rgba(255, 255, 255, .12);
+export const ArrowLink = styled.button` 
     display: block; 
     position: relative; 
-    width: 44px; 
-    height: 44px;
-    &.left {
-        transform: scaleX(-1); 
-    }
-
-
+    width: 38px; 
+    height: 38px;
+    border-radius: 1.5rem;
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
 `; 

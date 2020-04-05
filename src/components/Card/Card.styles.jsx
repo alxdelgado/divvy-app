@@ -19,3 +19,9 @@ export const CardWrapper = styled.div`
         max-height: 246px;
     }
 `;
+
+export const Card_Grid = styled.div`
+    display: grid; 
+    grid-template-columns: repeat(4, 30px 1fr) 50px; 
+    
+`; 

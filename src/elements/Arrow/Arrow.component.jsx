@@ -2,13 +2,14 @@ import React from 'react';
 
 // Import Styled Components 
 import {
-    ArrowWrapper
+    ArrowWrapper,
+    ArrowLink
 } from './Arrow.styles';
 
 const Arrow = () => {
     return (
         <ArrowWrapper>
-            <ArrowAnimation></ArrowAnimation>
+            <ArrowLink>></ArrowLink>
         </ArrowWrapper>
     )
 }

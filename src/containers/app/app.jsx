@@ -1,5 +1,13 @@
 import React, { Fragment } from 'react';
 
+import axios from 'axios';
+
+// Import Styled Components
+import {
+    AppWrapper
+} from './app.styles';
+
+
 // Import Components
 import Header from '../../components/Header/Header.component';
 import Card from '../../components/Card/Card.component';
@@ -7,15 +15,23 @@ import SearchBar from '../../components/SearchBar/SearchBar.component';
 
 
 class App extends React.Component {
+
+
+    // define our state
+    state = {
+        search_input: '',
+        stations: [],
+    }
+
     render() {
         return (
-            <React.Fragment>
+            <AppWrapper>
                 <Header />
                 <SearchBar />
-                <Card />
-            </React.Fragment>
-        )
+            </AppWrapper>
+
+        );
     }
 }
 
-export default App; 
+export default App;

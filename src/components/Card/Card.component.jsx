@@ -4,9 +4,12 @@ import axios from 'axios';
 // Import regenerator runtime; 
 import regeneratorRuntime from "regenerator-runtime";
 
+
+
 // Import Styled Components
 import {
-    CardWrapper
+    CardWrapper,
+    Card_Grid
 } from './Card.styles';
 
 
@@ -15,23 +18,13 @@ class Card extends React.Component {
 
     state = {
         stations: [],
-        station_name: '',
-
     }
 
     componentDidMount() {
         this.getStations();
     }
 
-    // Update state with current search bar input
-    searchBarHandler = (e) => {
-        this.setState({
-            station_name: e.target.value
-        })
-    };
-
     getStations = async () => {
-        const stationName = this.state.searchBarInput;
         const API_URL = 'https://data.cityofchicago.org/resource/aavc-b2wj.json';
         const URL = API_URL
 
@@ -43,8 +36,7 @@ class Card extends React.Component {
             console.log(response);
 
             this.setState({
-                stations: stationData,
-                station_name: e.target.value
+                stations: stationData
             })
         } catch (error) {
             this.setState({ error: true, loading: false })
@@ -57,7 +49,21 @@ class Card extends React.Component {
         console.log(this.state.stations);
         return (
             <CardWrapper>
-                <h1>SoundCloud Data</h1>
+                {this.state.stations.map((station_info, index) => {
+                    return <Card_Grid
+                        key={station_info.id}
+                        name={station_info.station_name}
+                        status={station_info.status}
+                        docks={station_info.docks_in_service}
+                        location={station_info.location}
+                        address={station_info.location_adress}
+                        city={station_info.location_city}
+                        state={station_info.location_state}
+                        zip={station_info.location_zip}
+                    >
+                        <h1>{name}</h1>
+                    </Card_Grid>
+                })}
             </CardWrapper>
         )
     }
