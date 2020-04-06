@@ -9,9 +9,10 @@ import {
 } from './SearchBar.styles';
 
 const SearchBar = (props) => {
+
     return (
         <SearchBarWrapper>
-            <InputField />
+            <InputField onInput={() => this.props.searchBarHandler(e)} />
             <Arrow />
         </SearchBarWrapper>
 

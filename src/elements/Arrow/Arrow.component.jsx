@@ -6,7 +6,7 @@ import {
     ArrowLink
 } from './Arrow.styles';
 
-const Arrow = () => {
+const Arrow = (props) => {
     return (
         <ArrowWrapper>
             <ArrowLink>></ArrowLink>

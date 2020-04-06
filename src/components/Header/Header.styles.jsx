@@ -16,3 +16,10 @@ export const HeaderTitle = styled.h1`
     font-size: 1.5rem;
 `;
 
+export const Divvy_Logo = styled.img`
+    width: 20%; 
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+`;
+
