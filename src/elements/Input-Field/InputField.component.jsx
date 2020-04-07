@@ -9,12 +9,10 @@ import {
 const InputField = (props) => {
     return (
         <InputFieldWrapper>
-            <label htmlFor={props.name}>{props.label}</label>
             <InputArea
                 id={props.id}
-                name={props.name}
-                placeholder={props.placeholder}
-                value={props.value}
+                name={props.station_name}
+                placeholder='Search'
                 onChange={props.handleChange}
             />
         </InputFieldWrapper>

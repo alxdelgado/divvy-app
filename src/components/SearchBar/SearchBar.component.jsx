@@ -12,7 +12,7 @@ const SearchBar = (props) => {
 
     return (
         <SearchBarWrapper>
-            <InputField onInput={() => this.props.searchBarHandler(e)} />
+            <InputField />
             <Arrow />
         </SearchBarWrapper>
 

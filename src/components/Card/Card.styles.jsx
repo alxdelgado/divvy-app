@@ -22,6 +22,8 @@ export const CardWrapper = styled.div`
 
 export const Card_Grid = styled.div`
     display: grid; 
-    grid-template-columns: repeat(4, 30px 1fr) 50px; 
+    grid-template-columns: repeat(0, 200px 1fr);
+    flex-direction: column;
+
     
 `; 

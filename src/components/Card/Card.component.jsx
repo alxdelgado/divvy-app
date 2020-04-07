@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 // Import regenerator runtime; 
-import regeneratorRuntime from "regenerator-runtime";
+// import regeneratorRuntime from "regenerator-runtime";
 
 // Import Styled Components
 import {
@@ -14,9 +14,18 @@ import {
 
 
 const Card = (props) => {
+    console.log(props)
     return (
-        <CardWrapper>
-            <Card_Grid>Data should be here on divvy locations</Card_Grid>
+        <CardWrapper data={props.data}>
+            <div>
+                {props.data.map((station, index) => {
+                    return (
+                        <Card_Grid key={station.id}>
+
+                        </Card_Grid>
+                    )
+                })}
+            </div>
         </CardWrapper>
     );
 }
