@@ -45,7 +45,7 @@ class App extends React.Component {
     }
 
     getStations = async () => {
-        const zip_code = this.state.search_input;
+        const search = this.state.search_input;
         const API_URL = 'https://data.cityofchicago.org/resource/aavc-b2wj.json';
 
         this.setState({ stations: [], loading: true, error: false })
@@ -70,7 +70,7 @@ class App extends React.Component {
         return (
             <AppWrapper>
                 <Header />
-                <SearchBar value={this.state.search_input} />
+                <SearchBar userSubmit={this.getStations} />
                 <Card data={this.state.stations} />
             </AppWrapper>
 

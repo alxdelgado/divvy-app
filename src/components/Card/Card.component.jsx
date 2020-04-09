@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
 
 // Import regenerator runtime; 
@@ -15,78 +15,20 @@ import {
 
 const Card = (props) => {
     console.log(props)
+    // we can also import Google Maps React - this card could be the map that renders the API data. 
+
     return (
         <CardWrapper data={props.data}>
             <div>
-                {props.data.map((station, index) => {
-                    return (
-                        <Card_Grid key={station.id}>
-
+                {props.data
+                    .filter((station, idx) => idx < 3)
+                    .map((station) => (
+                        <Card_Grid>
                         </Card_Grid>
-                    )
-                })}
+                    ))}
             </div>
         </CardWrapper>
     );
 }
 
 export default Card;
-
-
-// class Card extends React.Component {
-
-
-//     state = {
-//         stations: [],
-//     }
-
-//     componentDidMount() {
-//         this.getStations();
-//     }
-
-//     getStations = async () => {
-//         const API_URL = 'https://data.cityofchicago.org/resource/aavc-b2wj.json';
-//         const URL = API_URL
-
-//         this.setState({ loading: true, error: false });
-
-//         try {
-//             const response = await axios.get(URL)
-//             const stationData = response.data;
-//             console.log(response);
-
-//             this.setState({
-//                 stations: stationData
-//             })
-//         } catch (error) {
-//             this.setState({ error: true, loading: false })
-//         }
-//     }
-
-
-
-//     render() {
-//         console.log(this.state.stations);
-//         return (
-//             <CardWrapper>
-//                 {this.state.stations.map((station_info, index) => {
-//                     return <Card_Grid
-//                         key={station_info.id}
-//                         name={station_info.station_name}
-//                         status={station_info.status}
-//                         docks={station_info.docks_in_service}
-//                         location={station_info.location}
-//                         address={station_info.location_adress}
-//                         city={station_info.location_city}
-//                         state={station_info.location_state}
-//                         zip={station_info.location_zip}
-//                     >
-//                         <h1>{name}</h1>
-//                     </Card_Grid>
-//                 })}
-//             </CardWrapper>
-//         )
-//     }
-// }
-
-// export default Card;
