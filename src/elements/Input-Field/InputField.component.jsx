@@ -13,7 +13,7 @@ const InputField = (props) => {
                 id={props.id}
                 name={props.station_name}
                 placeholder='Search'
-                onChange={props.handleChange}
+                onChange={props.searchBarHandler}
             />
         </InputFieldWrapper>
     )

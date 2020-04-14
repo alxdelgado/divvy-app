@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Import regenerator runtime; 
@@ -11,24 +11,13 @@ import {
 } from './Card.styles';
 
 
-
-
-const Card = (props) => {
-    console.log(props)
-    // we can also import Google Maps React - this card could be the map that renders the API data. 
+function Card(props) {
 
     return (
-        <CardWrapper data={props.data}>
-            <div>
-                {props.data
-                    .filter((station, idx) => idx < 3)
-                    .map((station) => (
-                        <Card_Grid>
-                        </Card_Grid>
-                    ))}
-            </div>
+        <CardWrapper>
+            {props.station_name}
         </CardWrapper>
-    );
-}
+    )
+};
 
 export default Card;
